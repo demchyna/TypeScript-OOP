@@ -1,10 +1,7 @@
-
 export abstract class Shape {
-    protected side: number;
-    private name: string;
+    private name: string = "My Shape";
 
-    constructor(side: number, name: string) {
-        this.side = side;
+    constructor(name?: string) {
         this.name = name;
     }
 
@@ -13,4 +10,6 @@ export abstract class Shape {
     shapeInfo(): void {
         console.log("This is " + this.name);
     }
+
+    protected readonly PI: number = 3.15;
 }

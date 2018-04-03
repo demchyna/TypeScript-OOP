@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Shape = (function () {
-    function Shape(side, name) {
-        this.side = side;
+var Shape = /** @class */ (function () {
+    function Shape(name) {
+        this.name = "My Shape";
+        this.PI = 3.15;
         this.name = name;
     }
     Shape.prototype.shapeInfo = function () {

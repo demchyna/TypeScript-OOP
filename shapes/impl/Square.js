@@ -10,19 +10,24 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Shape_1 = require("./Shape");
-var Ball = (function (_super) {
-    __extends(Ball, _super);
-    function Ball(side, name) {
-        return _super.call(this, side, name) || this;
+var Shape_1 = require("../Shape");
+var Square = /** @class */ (function (_super) {
+    __extends(Square, _super);
+    function Square(name, side) {
+        var _this = _super.call(this, name) || this;
+        _this.side = side;
+        return _this;
     }
-    Ball.prototype.area = function () {
-        return 4 * Math.PI * this.side * this.side;
+    Square.prototype.area = function () {
+        return this.side * this.side;
     };
-    Ball.prototype.shapeInfo = function () {
+    Square.prototype.perimeter = function () {
+        return 4 * this.side;
+    };
+    Square.prototype.shapeInfo = function () {
         _super.prototype.shapeInfo.call(this);
-        console.log("\tRadius =  " + this.side);
+        console.log("\tSide =  " + this.side);
     };
-    return Ball;
+    return Square;
 }(Shape_1.Shape));
-exports.Ball = Ball;
+exports.Square = Square;

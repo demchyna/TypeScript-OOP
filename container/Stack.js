@@ -1,6 +1,7 @@
-var Stack = (function () {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Stack = /** @class */ (function () {
     function Stack() {
-        this.storage = [];
         this.top = -1;
     }
     Stack.prototype.push = function (item) {
@@ -17,19 +18,15 @@ var Stack = (function () {
             throw new Error("Stack is empty!");
         }
     };
-    Stack.prototype.topOf = function () {
-        return this.top;
+    Stack.prototype.size = function () {
+        return this.top + 1;
+    };
+    Stack.prototype.isEmpty = function () {
+        if (this.top >= 0)
+            return false;
+        else
+            return true;
     };
     return Stack;
 }());
-function main() {
-    var stack = new Stack();
-    stack.push(156);
-    stack.push(342);
-    stack.push(846);
-    //console.log(stack.top);
-    console.log(stack.pop());
-    console.log(stack.pop());
-    console.log(stack.pop());
-}
-main();
+exports.Stack = Stack;
